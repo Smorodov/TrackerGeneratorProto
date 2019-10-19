@@ -1,0 +1,14 @@
+file(GLOB HUNGARIAN_KALMAN_HEADER src/Tracker/HungarianKalmanTracker/*.h*)
+file(GLOB HUNGARIAN_KALMAN_SOURCE src/Tracker/HungarianKalmanTracker/*.c*)
+SOURCE_GROUP("HUNGARIAN_KALMAN Source" FILES ${HUNGARIAN_KALMAN_SOURCE})
+SOURCE_GROUP("HUNGARIAN_KALMAN Header" FILES ${HUNGARIAN_KALMAN_HEADER})
+include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/HungarianKalmanTracker)
+
+set(TRACKER_SOURCE ${HUNGARIAN_SOURCE}
+                   ${KALMAN_SOURCE}
+                   ${HUNGARIAN_KALMAN_SOURCE}
+                   )
+set(TRACKER_HEADER ${HUNGARIAN_HEADER}                  
+  				   ${KALMAN_HEADER}
+                   ${HUNGARIAN_KALMAN_HEADER}
+                   )

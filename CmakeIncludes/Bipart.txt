@@ -1,0 +1,24 @@
+ file(GLOB GTL_HEADER src/Tracker/Common/GraphSolvers/GTL/include/GTL/*.h*)
+ file(GLOB GTL_SOURCE src/Tracker/Common/GraphSolvers/GTL/src/*.c*)
+ file(GLOB GRAPH_HEADER src/Tracker/Common/GraphSolvers/GTL/*.h*)
+ file(GLOB GRAPH_SOURCE src/Tracker/Common/GraphSolvers/GTL/*.c*)
+ file(GLOB BIPART_KALMAN_HEADER src/Tracker/BipartKalmanTracker/*.h*)
+ file(GLOB BIPART_KALMAN_SOURCE src/Tracker/BipartKalmanTracker/*.c*)
+ SOURCE_GROUP("BIPART Source" FILES ${GTL_SOURCE} ${GRAPH_SOURCE})
+ SOURCE_GROUP("BIPART Header" FILES ${GTL_HEADER} ${GRAPH_HEADER})
+ SOURCE_GROUP("BIPART_KALMAN Source" FILES ${BIPART_KALMAN_SOURCE})
+ SOURCE_GROUP("BIPART_KALMAN Header" FILES ${BIPART_KALMAN_HEADER})
+ include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/Common/GraphSolvers/GTL/include)
+ include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/Common/GraphSolvers/GTL/include/GTL)
+ include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/Common/GraphSolvers/GTL)
+ include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/BipartKalmanTracker)
+ set(TRACKER_SOURCE ${KALMAN_SOURCE} 				 
+                    ${GTL_SOURCE}
+                    ${GRAPH_SOURCE}
+                    ${BIPART_KALMAN_SOURCE}
+                    )
+ set(TRACKER_HEADER ${KALMAN_HEADER}  				                   
+ 				     ${GTL_HEADER}
+ 				     ${GRAPH_HEADER}
+                    ${BIPART_KALMAN_HEADER}
+                    )

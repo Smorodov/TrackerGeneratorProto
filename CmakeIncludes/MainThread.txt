@@ -1,0 +1,5 @@
+file(GLOB MAIN_THREAD_HEADER src/MainThread/*.h*)
+file(GLOB MAIN_THREAD_SOURCE src/MainThread/*.c*)
+SOURCE_GROUP("MAIN_THREAD Source" FILES ${MAIN_THREAD_SOURCE})
+SOURCE_GROUP("MAIN_THREAD Header" FILES ${MAIN_THREAD_HEADER})
+include_directories(${CMAKE_SOURCE_DIR}/src/MainThread)

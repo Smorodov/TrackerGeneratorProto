@@ -1,0 +1,5 @@
+file(GLOB HUNGARIAN_HEADER src/Tracker/Common/GraphSolvers/HungarianAlg/*.h*)
+file(GLOB HUNGARIAN_SOURCE src/Tracker/Common/GraphSolvers/HungarianAlg/*.c*)
+SOURCE_GROUP("HUNGARIAN Source" FILES ${HUNGARIAN_SOURCE})
+SOURCE_GROUP("HUNGARIAN Header" FILES ${HUNGARIAN_HEADER})
+include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/Common/GraphSolvers/HungarianAlg)

@@ -1,0 +1,5 @@
+file(GLOB KALMAN_HEADER src/Tracker/Common/Filters/Kalman/*.h*)
+file(GLOB KALMAN_SOURCE src/Tracker/Common/Filters/Kalman/*.c*)
+SOURCE_GROUP("KALMAN Source" FILES ${KALMAN_SOURCE})
+SOURCE_GROUP("KALMAN Header" FILES ${KALMAN_HEADER})
+include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/Common/Filters/Kalman)

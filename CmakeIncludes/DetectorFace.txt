@@ -1,0 +1,6 @@
+file(GLOB DETECTOR_HEADER src/Detector/FaceDetector/*.h*)
+file(GLOB DETECTOR_SOURCE src/Detector/FaceDetector/*.c*)
+SOURCE_GROUP("DETECTOR Source" FILES ${DETECTOR_SOURCE})
+SOURCE_GROUP("DETECTOR Header" FILES ${DETECTOR_HEADER})
+include_directories(${CMAKE_SOURCE_DIR}/src/Detector/Common)
+include_directories(${CMAKE_SOURCE_DIR}/src/Detector/FaceDetector)

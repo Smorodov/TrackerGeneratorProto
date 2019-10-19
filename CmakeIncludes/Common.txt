@@ -1,0 +1,26 @@
+file(GLOB ROOT_COMMON_HEADER src/Common/*.h*)
+file(GLOB ROOT_COMMON_SOURCE src/Common/*.c*)
+file(GLOB TRACK_HEADER src/Tracker/Common/Track/*.h*)
+file(GLOB TRACK_SOURCE src/Tracker/Common/Track/*.c*)
+file(GLOB TRACKER_COMMON_HEADER src/Tracker/Common/*.h*)
+file(GLOB TRACKER_COMMON_SOURCE src/Tracker/Common/*.c*)
+file(GLOB DETECTOR_COMMON_HEADER src/Detector/Common/*.h*)
+file(GLOB DETECTOR_COMMON_SOURCE src/Detector/Common/*.c*)
+
+
+set(COMMON_HEADER ${ROOT_COMMON_HEADER} 
+                  ${TRACK_HEADER}
+                  ${DETECTOR_COMMON_HEADER}
+                  ${TRACKER_COMMON_HEADER}
+                  )
+set(COMMON_SOURCE ${ROOT_COMMON_SOURCE}
+                  ${TRACK_SOURCE}
+                  ${DETECTOR_COMMON_SOURCE}
+                  ${TRACKER_COMMON_SOURCE}
+                  )
+
+SOURCE_GROUP("COMMON Source" FILES ${COMMON_SOURCE})
+SOURCE_GROUP("COMMON Header" FILES ${COMMON_HEADER})
+include_directories(${CMAKE_SOURCE_DIR}/src/Common)
+include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/Common)
+include_directories(${CMAKE_SOURCE_DIR}/src/Tracker/Common/Track)
